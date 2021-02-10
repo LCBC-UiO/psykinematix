@@ -110,7 +110,7 @@ cleanup_sheet <- function(x){
 
   nested_list$trials <- select(trial_data, trial_index, everything())
 
-  empty <- which(sapply(nested_list, purrr::is_empty))
+  empty <- which(sapply(nested_list, is_empty))
   for(i in rev(empty)) nested_list[[i]] <- NULL
 
   nested_list
@@ -132,6 +132,10 @@ cleanup_tables <- function(x){
   x <- na_col_rm(x)
   x <- na_row_rm(x)
   x
+}
+
+is_empty <- function (x){
+  length(x) == 0
 }
 
 na_col_rm <- function(x){

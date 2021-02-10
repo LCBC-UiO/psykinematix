@@ -1,5 +1,9 @@
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(ggplot2)
 library(readxl)
+library(purrr)
 library(pbmcapply)
 
 source(here::here("R/utilities.R"))
