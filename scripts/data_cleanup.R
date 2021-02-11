@@ -5,6 +5,7 @@ library(ggplot2)
 library(readxl)
 library(purrr)
 library(pbmcapply)
+library(readr)
 
 source(here::here("R/utilities.R"))
 
@@ -80,7 +81,8 @@ df_summary <- df %>%
     accuracy_se = mean(ifelse(response == "Hit", 1, 0))/sqrt(n()),
   ) %>%
   left_join(coh) %>%
-  filter(grepl("^[1-6]|retest", task))
+  filter(grepl("^[1-6]|retest", task)) %>%
+  mutate(across(where(is.numeric), round, digits = 5))
 write_tables(df_summary,
              here::here("data/psykinematix_task_summaries"))
 
