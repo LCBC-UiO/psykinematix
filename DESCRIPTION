@@ -1,27 +1,18 @@
-Type: Compendium
-Package: psykinematix_cleanup
-Title: LCBC Psykinematix cleanup
+Package: psykinematix
+Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Athanasia Mo", "Mowinckel", 
-                    email = "a.m.mowinckel@psykologi.uio.no", 
-                    role = c("aut", "cre"),
-                    comment = c(ORCID = "0000-0002-5756-0223"))
-Description: This repository contains scripts and functions to cleanup psykinematix data. 
-The repository is synced to the lagringshotell where the data are also located.
-License: CC BY 4.0
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    readxl,
-    janitor,
-    dplyr,
-    tidyr,
-    ggplot2,
-    stringr,
-    readr,
-    jsonlite,
-    pbmcapply,
-    purrr
+    janitor
