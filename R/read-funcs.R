@@ -1,3 +1,17 @@
+#' Read psykinematix file
+#'
+#' Convenience function, will automatically detect
+#' file type based on file extension and use
+#' the correct reading function
+#'
+#' @param path string. path to psykinematix file
+#' @param type string. override extension detection
+#' @param ... other arguments to the read functions
+#'
+#' @return depending on read function called, data or string vector
+#' @export
+#'
+# #' @examples
 read_pkmx <- function(path, type = NULL, ...){
   if(is.null(type))
     type <- tools::file_ext(path)
@@ -10,6 +24,18 @@ read_pkmx <- function(path, type = NULL, ...){
   read_func(path, ...)
 }
 
+#' Read psykinematix log file
+#'
+#' Reads in the psykinematix log
+#' file (lpkmx) as a string vector.
+#'
+#' @param path string. path to file.
+#' @param ... other arguments to \code{\link[base]{readLines}}
+#'
+#' @return string vector of the log file contents
+#' @export
+#'
+# #' @examples
 read_lpkmx <- function(path, ...){
   readLines(path, ...)
 }
@@ -63,7 +89,7 @@ clean_rpkmx <- function(dtl, clean_names = TRUE){
   if(clean_names)
     dt <- janitor::clean_names(dt)
   dt_flat <- flatten_rpkmx(dt, clean_names = clean_names)
-  type.convert(dt_flat)
+  utils::type.convert(dt_flat)
 }
 
 flatten_rpkmx <- function(data, clean_names = TRUE){

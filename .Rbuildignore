@@ -7,3 +7,4 @@ scripts/
 ^docs$
 ^pkgdown$
 ^README\.Rmd$
+R/utilities.R
