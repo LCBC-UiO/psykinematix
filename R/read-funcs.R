@@ -97,7 +97,7 @@ flatten_rpkmx <- function(data, clean_names = TRUE){
   dt <- data
   for(i in rev(idx)){
     tmp <- data[,i][[1]]
-    if(class(tmp) == "character"){
+    if(inherits(tmp, "character")){
       tmp <- data[,i]
     }
     nm <- names(data)[i]
